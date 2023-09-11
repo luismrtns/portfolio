@@ -12,19 +12,20 @@
 :root{
   --text-color: white;
   --cor-borda: rgb(255, 255, 255, 0.412);
-  --bg_url: url(assets/bg-mobile.jpg);
+  --bg-url: url(assets/bg-mobile.jpg);
   --switch-btn: url(assets/moon-stars.svg)
 }
 
 .modo-branco{
   --text-color: black;
-  --bg_url: url(assets/bg-mobile-light.jpg);
+  --bg-url: url(assets/bg-mobile-light.jpg);
   --cor-borda: rgba(35, 8, 58, 0.412);
   --switch-btn: url(assets/sun.svg)
 }
 
 body{
-  background: var(--bg_url) no-repeat top center/cover;
+  background: var(--bg-url) no-repeat top center/cover;
+  height: 92vh;
 }
 
 #container{
@@ -63,11 +64,17 @@ body{
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+
+  animation: deslizar-volta .2s;
 }
 
 .modo-branco #switch button{
-  right: 0;
-  left: initial;
+  animation: deslizar .2s forwards; /*vai manter a posição definida no keyframe*/
+}
+
+#switch button:hover{
+  outline: 8px solid var(--cor-borda);
+  transition: .2s ease;
 }
 
 #switch span{
@@ -154,4 +161,35 @@ footer{
 
 span{
   color: rgb(173, 95, 229);
+}
+
+/*media-queries*/
+
+@media (min-width: 700px){ /*de 700px pra cima...*/
+  :root{
+    --bg-url: url(assets/bg-desktop.jpg);
+  }
+
+  .modo-branco{
+    --bg-url: url(assets/bg-desktop-light.jpg);
+  }
+}
+
+/*animações com CSS*/
+@keyframes deslizar{
+  from {
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+@keyframes deslizar-volta{
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
+  }
 }
