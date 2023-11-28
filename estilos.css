@@ -35,14 +35,14 @@
   --text-color: white;
   --cor-borda: rgb(255, 255, 255, 0.412);
   --bg-url: url(assets/bg-mobile.jpg);
-  --switch-btn: url(assets/moon-stars.svg)
+  --switch-btn: url(assets/moon-stars.svg);
 }
 
 .modo-branco{
   --text-color: black;
   --bg-url: url(assets/bg-mobile-light.jpg);
   --cor-borda: rgba(35, 8, 58, 0.412);
-  --switch-btn: url(assets/sun.svg)
+  --switch-btn: url(assets/sun.svg);
 }
 
 body{
